@@ -1,0 +1,84 @@
+@{
+    ViewData["Title"] = "Login";
+    var message = TempData["Message"] as string;
+    var error = TempData["Error"] as string;
+}
+
+<!-- Display login success message if available -->
+@if (!string.IsNullOrEmpty(message))
+{
+    <div id="successMessage" class="alert alert-success">@message</div>
+}
+
+<!-- Display login error message if available -->
+@if (!string.IsNullOrEmpty(error))
+{
+    <div id="errorMessage" class="alert alert-danger">@error</div>
+}
+
+<script>
+    // Function to remove the success message after 3 seconds
+    setTimeout(function() {
+        var successMessage = document.getElementById('successMessage');
+        if (successMessage) {
+            successMessage.remove();
+        }
+    }, 3000); // 3000 milliseconds = 3 seconds
+
+    // Function to remove the error message after 3 seconds
+    setTimeout(function() {
+        var errorMessage = document.getElementById('errorMessage');
+        if (errorMessage) {
+            errorMessage.remove();
+        }
+    }, 3000); // 3000 milliseconds = 3 seconds
+</script>
+
+<body class="ss">
+    <div class="container1" id="container1">
+        <div class="form-container sign-up-container">
+            <form class="f" action="@Url.Action("Register", "Account")" method="post">
+                <h1>Create Account</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span class="sp">or use your email for registration</span>
+                <input type="text" placeholder="Name" name="Customer_Name" />
+                <input type="email" placeholder="Email" name="email" />
+                <input type="password" placeholder="Password" name="password" />
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form class="f" action="@Url.Action("Login", "Account")" method="post">
+                <h1>Sign in</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span class="sp">or use your account</span>
+                <input type="email" placeholder="Email" name="email" />
+                <input type="password" placeholder="Password" name="password" />
+                <a href="#">Forgot your password?</a>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

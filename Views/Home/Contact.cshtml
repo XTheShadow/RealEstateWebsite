@@ -1,0 +1,63 @@
+@{
+    ViewData["Title"] = "Contact Us";
+    var message = TempData["Message"] as string;
+}
+
+
+
+
+
+<!-- Display confirmation message if available -->
+@if (!string.IsNullOrEmpty(message))
+{
+    <div id="successMessage" class="alert alert-success">@message</div>
+}
+
+<script>
+    // Function to remove the success message after 3 seconds
+    setTimeout(function() {
+        var successMessage = document.getElementById('successMessage');
+        if (successMessage) {
+            successMessage.remove();
+        }
+    }, 3000); // 3000 milliseconds = 3 seconds
+</script>
+
+
+
+<body class="bb">
+<!-- Contact Section -->
+<section class="container">
+  <h2 class="text-center mb-4">Contact Us</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Send us a Message</h3>
+      <form method="post" action="/Contact/SendMessage">
+    <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+        <!-- Add the name attribute -->
+    </div>
+    <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+        <!-- Add the name attribute -->
+    </div>
+    <div class="form-group">
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Enter your message"></textarea>
+        <!-- Add the name attribute -->
+    </div>
+    <button type="submit" class="btn btn-dark">Submit</button>
+</form>
+
+    </div>
+    <div class="col-md-6">
+      <h3>Contact Information</h3>
+      <p>Phone: <strong>123-456-7890</strong></p>
+      <p>Email: <strong>info@realestate.com</strong></p>
+      <p>Address: 123 Main Street, City, Country</p>
+    </div>
+  </div>
+</section>
+</body>

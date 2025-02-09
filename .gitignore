@@ -1,0 +1,33 @@
+# Ignore build and binary files
+bin/
+obj/
+
+# Ignore VS Code-specific settings
+.vscode/
+
+# Ignore temporary and log files
+*.tmp
+*.log
+*.lock
+*.cache
+
+# Ignore environment-specific settings
+appsettings.json
+appsettings.Development.json
+
+# Ignore compiled code and dependencies
+*.dll
+*.exe
+*.pdb
+
+# Ignore NuGet and Node.js package folders
+node_modules/
+packages/
+
+# Ignore database files (if any)
+*.db
+*.sqlite
+
+# Ignore OS-specific files
+$RECYCLE.BIN/   # Windows
+.DS_Store       # macOS

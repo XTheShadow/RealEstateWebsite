@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewData["Title"] = "Home";
+}
+
+@if (TempData["Message"] != null)
+{
+    <div id="logged-in" class="alert alert-success" role="alert">
+        @TempData["Message"]
+    </div>
+}
+<script>
+    // Function to remove the success message after 3 seconds
+    setTimeout(function() {
+        var successMessage = document.getElementById('logged-in');
+        if (successMessage) {
+            successMessage.remove();
+        }
+    }, 3000); // 3000 milliseconds = 3 seconds
+</script>
+
+
+
+<body class="bb">
+  <div class="container text-center">
+    <h1 class="display-4">Find Your Dream Home</h1>
+    <p class="lead">Explore our latest listings and find the perfect property for you.</p>
+  </div>
+
+
+<!-- Featured Listings -->
+<section class="articles">
+  <article>
+    <div class="article-wrapper">
+      <figure>
+        <img src="~/img/House-slide-1.jpg" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2> A nice House</h2>
+        <p>
+          Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+        </p>
+            @Html.ActionLink("Read more", "HouseDetails", "Properties", null, new { @class = "read-more" })
+      </div>
+    </div>
+  </article>
+  <article>
+
+    <div class="article-wrapper">
+      <figure>
+        <img src="~/img/Villa.jpg" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>Villa</h2>
+        <p>
+          Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+        </p>
+            @Html.ActionLink("Read more", "VillaDetails", "Properties", null, new { @class = "read-more" })
+
+      </div>
+    </div>
+  </article>
+  <article>
+
+    <div class="article-wrapper">
+      <figure>
+        <img src="~/img/Office.jpg" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>Office</h2>
+        <p>
+          Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+        </p>
+            @Html.ActionLink("Read more", "OfficeDetails", "Properties", null, new { @class = "read-more" })
+      </div>
+    </div>
+  </article>
+</section>
+</body>

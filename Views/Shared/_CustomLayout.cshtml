@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate Listings</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="~/css/site.css"> 
+  <link rel="stylesheet" href="~/wwwroot/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+</head>
+<body>
+   <header>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+    <h3 class="logo">@Html.ActionLink("Palestine Real estate", "Index", "Home", null, new { @class = "logo" })</h3>
+      <ul>
+        <li>
+            @Html.ActionLink("Home", "Index", "Home")
+        </li>
+        <li>
+            @Html.ActionLink("Properties", "Properties", "Home")
+        </li>
+        <li>
+            @Html.ActionLink("About", "About", "Home")
+        </li>
+        <li>
+            @Html.ActionLink("Contact", "Contact", "Home")
+        </li>
+        <li>
+            @Html.ActionLink("Login/Register", "Login", "Home")
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+        
+
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Footer -->
+<div class="footer-basic1">
+  <footer class="footer-basic1">
+    <div class="social">
+      <a href="#"><i class="icon ion-social-instagram"></i></a>
+      <a href="#"><i class="icon ion-social-snapchat"></i></a>
+      <a href="#"><i class="icon ion-social-twitter"></i></a>
+      <a href="#"><i class="icon ion-social-facebook"></i></a>
+    </div>
+    <ul class="list-inline">
+      <li class="list-inline-item">
+        @Html.ActionLink("Home", "Index", "Home")
+        </li>
+
+        <li class="list-inline-item">
+        @Html.ActionLink("Properties", "Properties", "Home")
+        </li>
+        
+        <li class="list-inline-item">
+        @Html.ActionLink("About", "About", "Home")
+        </li>
+        
+        <li class="list-inline-item">
+        @Html.ActionLink("Contact", "Contact", "Home")
+        </li>
+        
+        <li class="list-inline-item">
+        @Html.ActionLink("Login/Register", "Login", "Home")
+        </li>
+    </ul>
+    <p class="copyright">Palestine Real estates © 2024</p>
+  </footer>
+</div>
+
+<!-- Bootstrap JavaScript and jQuery -->
+<script src="~/js/LoginForm.js"></script>
+<script src="~/js/app.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="~/js/popper.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
