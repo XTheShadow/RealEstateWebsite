@@ -25,41 +25,26 @@ This is a web-based Real Estate Management System built using **ASP.NET Core MVC
 
 ## 🚀 Setup & Installation
 
-### 1️⃣ **Clone the Repository**
+### 1️. **Clone the Repository**
   ```bash
   git clone https://github.com/XTheShadow/RealEstateWebsite.git
   cd RealEstateWebsite
   ```
 
-### 2️⃣ **Setup the Database**
+### 2️. **Setup the Database**
   - Import `Database/schema.sql` into your MySQL server.
   - Optionally, seed data using `Database/seeds.sql`.
 
-### 3️⃣ **Configure the Connection String**
+### 3️. **Configure the Connection String**
   Update your MySQL credentials in `AccountController.cs` and `ContactController.cs`
 
 
-### 4️⃣ **Run the Project**
+### 4️. **Run the Project**
   ```bash
   dotnet run
   ```
   Then open **http://localhost:5000** in your browser.
 
----
-
-## 📂 Project Structure
-
-```
-📁 RealEstateWebsite
-├── 📂 Controllers         # MVC Controllers (Account, Contact, etc.)
-├── 📂 Models              # Database Models
-├── 📂 Views               # HTML Views (Razor)
-├── 📂 wwwroot             # Static files (CSS, JS, Images)
-├── 📂 Database            # SQL files for schema and seed data
-├── appsettings.json       # Configuration file
-├── Program.cs             # Application entry point
-└── README.md              # Project documentation
-```
 
 ---
 
